@@ -6,7 +6,7 @@ const app = express();
 app.use(express.static('public'));
 app.use(morgan('common'));
 
-let topMovies = [
+let movies = [
     {
         title: 'Good Will Hunting',
         director: 'Gus Van Sant',
@@ -59,12 +59,13 @@ let topMovies = [
     }
 ];
 
+
 app.get('/', (req, res) => {
     res.send('This is MovieScout');
 });
 
 app.get('/movies', (req, res) => {
-    res.json(topMovies);
+    res.status(200).json(movies)
 });
 
 app.use((err, req, res, next) => {
