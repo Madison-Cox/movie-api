@@ -22,8 +22,15 @@
                 <td>Create User</td>
                 <td>/users</td>
                 <td>POST</td>
-                <td>A JSON object holding data about<br> the user to add</td>
-                <td>A JSON object holding data was added <br>and given an ID</td>
+                <td>A JSON object holding data about<br> the user to add<br>{
+    "name": "User",
+    "favoriteMovies": []
+}</td>
+                <td>A JSON object holding data was added <br>and given an ID<br>{
+    "name": "User",
+    "favoriteMovies": [],
+    "id": "3127dcc1-4dbb-410d-b815-e846a0559dfe"
+}</td>
             </tr>
             <tr>
             <td>Update User</td>
@@ -48,7 +55,7 @@
             </tr>
             <tr>
                 <td>Get Director of movie</td>
-                <td>/movies/:title</td>
+                <td>/movies/director/:directorName</td>
                     <td>GET</td>
                     <td>None</td>
                     <td>A JSON object holding data<br> about a director</td>
@@ -65,7 +72,16 @@
                 <td>/movies/:title</td>
                     <td>GET</td>
                     <td>None</td>
-                    <td>Returns object holding data about<br> specific movie</td>
+                    <td>Returns object holding data about<br> specific movie<br>{
+    "title": "Top Gun",
+    "Director": {
+        "Name": "Tony Scott"
+    },
+    "stars": "Tom Cruise, Tim Robbins, Kelly McGillis",
+    "Genre": {
+        "name": "Action"
+    }
+}</td>
             </tr>
             <tr>
                 <td>Add Movie</td>
