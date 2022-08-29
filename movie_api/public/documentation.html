@@ -4,7 +4,85 @@
         <title>Movie APP</title>
     </head>
     <body>
-        <h1> Movie Finder</h1>
-        <p>This is an API that will provide information about different movies, directors, and genres.</p>
+        <h1> Movie Finder Documentation </h1>
+        <p>This is a API that will be used on server-side that can be used to retrieve information about many different movies.</p>
+    <div>
+        <table>
+            <thead>
+            <tr>
+                <th>Business Logic</th>
+                <th>URL</th>
+                <th>METHOD</th>
+                <th>Request</th>
+                <th>Response</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Create User</td>
+                <td>/users</td>
+                <td>POST</td>
+                <td>A JSON object holding data about<br> the user to add</td>
+                <td>A JSON object holding data was added <br>and given an ID</td>
+            </tr>
+            <tr>
+            <td>Update User</td>
+                <td>/users/:id</td>
+                    <td>PUT</td>
+                    <td>None</td>
+                    <td>Confirmation message verifying<br> user was added</td>
+            </tr>
+            <tr>
+                <td>Delete User</td>
+                <td>/users/:id/</td>
+                    <td>DELETE</td>
+                    <td>None</td>
+                    <td>Confirmation message verifying user<br> was deleted</td>
+            </tr>
+            <tr>
+                <td>Get a list of movie</td>
+                <td>/movies</td>
+                    <td>GET</td>
+                    <td>None</td>
+                    <td>A JSON holding data about all movies</td>
+            </tr>
+            <tr>
+                <td>Get Director of movie</td>
+                <td>/movies/:title</td>
+                    <td>GET</td>
+                    <td>None</td>
+                    <td>A JSON object holding data<br> about a director</td>
+            </tr>
+            <tr>
+                <td>Get Genre of movie</td>
+                <td>/movies/Genre/:genreName</td>
+                    <td>GET</td>
+                    <td>None</td>
+                    <td>Returns object holding data about Genre</td>
+            </tr>
+            <tr>
+                <td>Get Movie by title</td>
+                <td>/movies/:title</td>
+                    <td>GET</td>
+                    <td>None</td>
+                    <td>Returns object holding data about<br> specific movie</td>
+            </tr>
+            <tr>
+                <td>Add Movie</td>
+                <td>/users/:id/:movietitle</td>
+                    <td>POST</td>
+                    <td>None</td>
+                    <td>A JSON object holding data was<br> added and given an ID</td>
+            </tr>
+            <tr>
+                <td>Delete Movie</td>
+                <td>/users/:id/:movietitle/</td>
+                    <td>DELETE</td>
+                    <td>None</td>
+                    <td>Confirmation message verifying movie<br> was removed</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
     </body>
 </html>
