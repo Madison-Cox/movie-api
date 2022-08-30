@@ -25,119 +25,143 @@ let users = [
 let movies = [
     {
         title: 'Good Will Hunting',
+        Description:'',
         Director: {
             Name: 'Gus Van Sant',
-            descriptions:''
+            Bio:'',
+            Birth:'July 24, 1952',
+            Death:'',
         },
         stars: 'Robin Williams, Matt Damon, Ben Affleck',
         Genre: {
             name:'Drama',
-            description:''
+            description:'drama is a category or genre of narrative fiction intended to be more serious than humorous in tone.'
         }
     },
     {
         title: 'Interstellar',
         Director: {
             Name:'Christopher Nolan',
-            description:''
+            Bio:'',
+            Birth:'July 30, 1970',
+            Death:'',
         },
         stars: 'Matthew McConaughey, Anne Hathaway, Jessica Chastain',
         Genre: {
-            name: 'Adventure, Sci-Fi',
-            description:''
+            name: 'Adventure',
+            description:'a genre that revolves around the conquests and explorations of a protagonist.'
         }
     },
     {
         title: 'Top Gun',
         Director: {
             Name: 'Tony Scott',
-            description:''
+            Bio:'',
+            Birth:'June 21, 1944',
+            Death:'August 19, 2012',
         },
         stars: 'Tom Cruise, Tim Robbins, Kelly McGillis',
         Genre: {
             name: 'Action',
-            description:''
+            description:'a film genre in which the protagonist is thrust into a series of events that typically involve violence and physical feats.'
         }
     },
     {
         title: 'Dazed and Confused',
         Director: {
             Name: 'Richard Linklater',
-            description:''
+            Bio:'',
+            Birth:'July 30, 1960',
+            Death:'',
         },
         stars: 'Jason London, Wiley Wiggins, Matthew McConaughey',
         Genre: {
             name: 'Comedy',
-            description:''
+            description:'a genre of fiction that consists of discourses or works intended to be humorous or amusing by inducing laughter.'
         }
     },
     {
         title: 'Star Wars',
         Director: {
             Name: 'George Lucas',
-            description:''
+            Bio:'',
+            Birth:'May 14, 1944',
+            Death:'',
         },
         stars: 'Mark hamill, Harrison Ford, Carrie Fisher',
         Genre: {
             name:'Sci-Fi',
-            description:''
+            description:'uses speculative, fictional science-based depictions of phenomena that are not fully accepted by mainstream science, such as extraterrestrial lifeforms, spacecraft, robots, cyborgs, interstellar travel or other technologies.'
         }
     },
     {
         title: 'Hook',
         Director: {
             Name: 'Steven Spielberg',
-            description:''
+            Bio:'',
+            Birth:'December 18, 1946',
+            Death:'',
         },
         stars: 'Dustin Hoffman, Robin Williams, Julia Roberts',
         Genre: {
             name:'Adventure',
-            description:''
+            description:'a genre that revolves around the conquests and explorations of a protagonist.'
         }
     },
     {
         title: 'Back to the Future',
         Director: {
             Name: 'Robert Zemeckis',
-            description:''
+            Bio:'',
+            Birth:'May 14, 1951',
+            Death:'',
         },
         stars: 'Michael J. Fox, Christopher Lloyd, Lea Thompson',
         Genre: {
-            name:'Adventure, Comedy, Sci-Fi',
-            description:''
+            name:'Adventure',
+            description:'a genre that revolves around the conquests and explorations of a protagonist.'
         }
     },
     {
         title: 'Saving Private Ryan',
         Director: {
-            Name: 'Steven Spielberg'
+            Name: 'Steven Spielberg',
+            Bio:'',
+            Birth:'December 18, 1946',
+            Death:'',
         },
         stars: 'Tom Hanks, Matt Damon, Tom Sizemore',
         Genre: {
             name:'Action',
-            description:''
+            description:'a film genre in which the protagonist is thrust into a series of events that typically involve violence and physical feats.'
         }
     },
     {
         title: 'Jurassic Park',
         Director: {
-            Name: 'Steven Spielberg'
+            Name: 'Steven Spielberg',
+            Bio:'',
+            Birth:'December 18, 1946',
+            Death:'',
         },
         stars: 'Sam Neill, Laura Dern, Jeff Goldblum',
         Genre: {
-            name:'Action, Adventure',
-            description:''
+            name:'Adventure',
+            description:'a genre that revolves around the conquests and explorations of a protagonist.'
         }
     },
     {
         title: 'GoodFellas',
         Director: {
-            Name: 'Martin Scorsese'
+            Name: 'Martin Scorsese',
+            Bio:'',
+            Birth:'November 17, 1942',
+            Death:'',
         },
         stars: 'Robert De Niro, Ray Liotta, Joe Pesci',
         Genre: {
-            name:'Drama, Biography, Crime',
-            description:''
+            name:'Crime',
+            description:'a film genre inspired by and analogous to the crime fiction literary genre.'
         }
     }
 ];
