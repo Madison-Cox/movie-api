@@ -26,66 +26,86 @@ let movies = [
     {
         title: 'Good Will Hunting',
         Director: {
-            Name: 'Gus Van Sant'
+            Name: 'Gus Van Sant',
+            descriptions:''
         },
         stars: 'Robin Williams, Matt Damon, Ben Affleck',
         Genre: {
-            name:'Drama'
+            name:'Drama',
+            description:''
         }
     },
     {
         title: 'Interstellar',
         Director: {
             Name:'Christopher Nolan',
+            description:''
         },
         stars: 'Matthew McConaughey, Anne Hathaway, Jessica Chastain',
         Genre: {
-            name: 'Adventure, Sci-Fi'
+            name: 'Adventure, Sci-Fi',
+            description:''
         }
     },
     {
         title: 'Top Gun',
         Director: {
-            Name: 'Tony Scott'
+            Name: 'Tony Scott',
+            description:''
         },
         stars: 'Tom Cruise, Tim Robbins, Kelly McGillis',
         Genre: {
-            name: 'Action'
+            name: 'Action',
+            description:''
         }
     },
     {
         title: 'Dazed and Confused',
         Director: {
-            Name: 'Richard Linklater'
+            Name: 'Richard Linklater',
+            description:''
         },
         stars: 'Jason London, Wiley Wiggins, Matthew McConaughey',
         Genre: {
-            name: 'Comedy'
+            name: 'Comedy',
+            description:''
         }
     },
     {
         title: 'Star Wars',
         Director: {
-            Name: 'George Lucas'
+            Name: 'George Lucas',
+            description:''
         },
         stars: 'Mark hamill, Harrison Ford, Carrie Fisher',
-        Genre: 'Sci-Fi'
+        Genre: {
+            name:'Sci-Fi',
+            description:''
+        }
     },
     {
         title: 'Hook',
         Director: {
-            Name: 'Steven Spielberg'
+            Name: 'Steven Spielberg',
+            description:''
         },
         stars: 'Dustin Hoffman, Robin Williams, Julia Roberts',
-        Genre: 'Adventure'
+        Genre: {
+            name:'Adventure',
+            description:''
+        }
     },
     {
         title: 'Back to the Future',
         Director: {
-            Name: 'Robert Zemeckis'
+            Name: 'Robert Zemeckis',
+            description:''
         },
         stars: 'Michael J. Fox, Christopher Lloyd, Lea Thompson',
-        Genre: 'Adventure, Comedy, Sci-Fi'
+        Genre: {
+            name:'Adventure, Comedy, Sci-Fi',
+            description:''
+        }
     },
     {
         title: 'Saving Private Ryan',
@@ -93,7 +113,10 @@ let movies = [
             Name: 'Steven Spielberg'
         },
         stars: 'Tom Hanks, Matt Damon, Tom Sizemore',
-        Genre: 'Action'
+        Genre: {
+            name:'Action',
+            description:''
+        }
     },
     {
         title: 'Jurassic Park',
@@ -101,7 +124,10 @@ let movies = [
             Name: 'Steven Spielberg'
         },
         stars: 'Sam Neill, Laura Dern, Jeff Goldblum',
-        Genre: 'Action, Adventure'
+        Genre: {
+            name:'Action, Adventure',
+            description:''
+        }
     },
     {
         title: 'GoodFellas',
@@ -109,7 +135,10 @@ let movies = [
             Name: 'Martin Scorsese'
         },
         stars: 'Robert De Niro, Ray Liotta, Joe Pesci',
-        Genre: 'Drama, Biography, Crime'
+        Genre: {
+            name:'Drama, Biography, Crime',
+            description:''
+        }
     }
 ];
 
