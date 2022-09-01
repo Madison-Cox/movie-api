@@ -19,6 +19,34 @@
         </thead>
         <tbody>
             <tr>
+                <td>Get genre information</td>
+                <td>/movies/:genre/genreName</td>
+                <td>GET</td>
+                <td>None</td>
+                <td>A JSON object holding data about genre</td>
+            </tr>
+            <tr>
+                <td>Read about App</td>
+                <td>/</td>
+                <td>Get</td>
+                <td>None</td>
+                <td>Information about application</td>
+            </tr>
+            <tr>
+                <td>Get list of users</td>
+                <td>/users</td>
+                <td>GET</td>
+                <td>None</td>
+                <td>A JSON holding data about all users</td>
+            </tr>
+            <tr>
+                <td>Get User by username</td>
+                <td>/users/:Username</td>
+                <td>GET</td>
+                <td>None</td>
+                <td>A JSON object holding data about a single user</td>
+            </tr>
+            <tr>
                 <td>Create User</td>
                 <td>/users</td>
                 <td>POST</td>
@@ -34,14 +62,14 @@
             </tr>
             <tr>
             <td>Update User</td>
-                <td>/users/:id</td>
+                <td>/users/:Username</td>
                     <td>PUT</td>
                     <td>None</td>
                     <td>Confirmation message verifying<br> user was added</td>
             </tr>
             <tr>
                 <td>Delete User</td>
-                <td>/users/:id/</td>
+                <td>/users/:Username/</td>
                     <td>DELETE</td>
                     <td>None</td>
                     <td>Confirmation message verifying user<br> was deleted</td>
@@ -84,15 +112,15 @@
 }</td>
             </tr>
             <tr>
-                <td>Add Movie</td>
-                <td>/users/:id/:movietitle</td>
+                <td>Add Movie to favorites</td>
+                <td>/users/:Username/movies/:MovieID</td>
                     <td>POST</td>
                     <td>None</td>
                     <td>A JSON object holding data was<br> added and given an ID</td>
             </tr>
             <tr>
                 <td>Delete Movie</td>
-                <td>/users/:id/:movietitle/</td>
+                <td>/users/:Username/movies/:MovieID</td>
                     <td>DELETE</td>
                     <td>None</td>
                     <td>Confirmation message verifying movie<br> was removed</td>
