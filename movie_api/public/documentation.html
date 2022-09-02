@@ -33,6 +33,13 @@
 }</td>
             </tr>
             <tr>
+                <td>Register new user</td>
+                <td>/login</td>
+                <td>POST</td>
+                <td>Assign JWTToken to user</td>
+                <td>Generates temporary JWTToken to user</td>
+            </tr>
+            <tr>
                 <td>Add Movie to favorites</td>
                 <td>/users/:Username/movies/:MovieID</td>
                     <td>POST</td>
@@ -48,14 +55,14 @@
             </tr>
             <tr>
                 <td>Get Director of movie</td>
-                <td>/movies/director/:directorName</td>
+                <td>/director/:directorName</td>
                     <td>GET</td>
                     <td>None</td>
                     <td>A JSON object holding data<br> about a director</td>
             </tr>
             <tr>
                 <td>Get Genre of movie</td>
-                <td>/movies/Genre/:genreName</td>
+                <td>/genre/:genreName</td>
                     <td>GET</td>
                     <td>None</td>
                     <td>Returns object holding data about Genre</td>
@@ -75,13 +82,6 @@
         "name": "Action"
     }
 }</td>
-            </tr>
-            <tr>
-                <td>Get genre information</td>
-                <td>/movies/:genre/genreName</td>
-                <td>GET</td>
-                <td>None</td>
-                <td>A JSON object holding data about genre</td>
             </tr>
             <tr>
                 <td>Read about App</td>
