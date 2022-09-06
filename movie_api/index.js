@@ -254,6 +254,7 @@ app.delete('/users/:Username/movies/:MovieID', passport.authenticate('jwt', { se
 
 
 
-app.listen(5285, () => {
-    console.log('listening on port 5285');
+const port = process.enc.PORT || 8080;
+app.listen(port, '0.0.0.0',() => {
+    console.log('listening to Port ' + port);
 });
