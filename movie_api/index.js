@@ -10,6 +10,23 @@ const Movies = Models.Movies;
 const Users = Models.Users;
 const Genres = Models.Genre;
 const Directors = Models.Director;
+const bcrypt = require('bcrypt');
+
+const { check, validationResult } = require('express-validator');
+
+const cors = require('cors');
+let allowedOrigins = ['http://localhost:8080', 'http:/testsite.com'];
+
+app.use(cors({
+    origin: (origin, callback) => {
+        if(!origin) return callabck(null, true);
+        if(allowedOrigins.indexOf(origin) === -1){
+            let message = 'The CORS policy for this application does not allow access from origin ' + origin;
+            return callback(new Error(message ), false);
+        }
+        return callback(null, true);
+    }
+}));
 
 mongoose.connect('mongodb://localhost:27017/MovieScout', { useNewUrlParser: true, useUnifiedTopology: true });
 
@@ -23,10 +40,30 @@ app.use(express.static('public'));
 
 app.use(morgan('common'));
 
+// Hash
+let userSchema = mongoose.Schema({
+    Username: {type: String, required: true},
+    Password: {type: String, requied: true},
+    Email: {type: String, required: true},
+    Birthday: Date,
+    FavoriteMovies: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Movie'}]
+});
+
+userSchema.statics.hashPassword = (password) => {
+    return bcrypt.hashSync(password, 10);
+};
+
+userSchema.methods.validatePassword = function(password) {
+    return bcrypt.compareSync(password, this.Password);
+};
+
 
 
 // CREATE A NEW USER
 app.post('/users', (req, res) => {
+
+
+let hashedPassword = Users.hashPassword(req.body.Password);
     Users.findOne({ Username: req.body.Username})
     .then((user) => {
         if (user) {
@@ -35,7 +72,7 @@ app.post('/users', (req, res) => {
             Users
             .create({
                 Username: req.body.Username,
-                Password: req.body.Password,
+                Password: hashedPassword,
                 Email: req.body.Email,
                 Birthday: req.body.Birthday
             })
