@@ -15,7 +15,6 @@ const bcrypt = require('bcrypt');
 const { check, validationResult } = require('express-validator');
 
 const cors = require('cors');
-let allowedOrigins = ['http://localhost:8080', 'http:/testsite.com'];
 
 app.use(cors({
     origin: (origin, callback) => {
@@ -33,6 +32,7 @@ mongoose.connect( process.env.CONNECTION_URI, { useNewUrlParser: true, useUnifie
 app.use(bodyParser.json());
 
 let auth = require('./auth')(app);
+
 const passport = require('passport');
 require('./passport');
 
@@ -57,7 +57,7 @@ userSchema.methods.validatePassword = function(password) {
     return bcrypt.compareSync(password, this.Password);
 };
 
-
+//CRUD ENDPOINTS
 
 // CREATE A NEW USER
 app.post('/users',
