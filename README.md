@@ -7,4 +7,3 @@
  <li>Current users can update information(Email, Username, Password, Birthday)</li>
  <li>Users are able to add and remove movies to their Favorites</li>
  <li>Users can delete profile at anytime</li>
-.
