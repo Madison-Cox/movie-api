@@ -16,7 +16,7 @@ const { check, validationResult } = require('express-validator');
 
 const cors = require('cors');
 
-let allowedOrigins = ['http://localhost:1234']
+let allowedOrigins = ['http://localhost:1234', 'localhost:1234']
 
 app.use(cors({
     origin: (origin, callback) => {
@@ -106,7 +106,7 @@ app.get('/', (req, res) => {
 });
 
 //READ GETS ALL MOVIES
-app.get('/movies', function (req, res) {
+app.get('/movies', passport.authenticate('jwt', { session: false }), (req, res) => {
     Movies.find()
         .then((movies) => {
             res.status(201).json(movies);
