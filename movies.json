@@ -3,7 +3,7 @@
     "_id": {
       "$oid": "630f8b2f6d7307d7dfeaa798"
     },
-    "title": "Interstellar",
+    "Title": "Interstellar",
     "Description": "A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival.",
     "Genre": {
       "Name": "Adventure",
