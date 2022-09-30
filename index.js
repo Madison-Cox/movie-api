@@ -106,6 +106,22 @@ app.get('/', (req, res) => {
     res.send('This is MovieScout');
 });
 
+//Get favorite movies from user
+app.get('/users/:Username/movies/:MovieID', passport.authenticate('jwt', { session: false }), (req, res) => {
+    Users.find({ Username: req.params.Username }, {
+        $get: { FavoriteMovies: req.params.MovieID }
+    },
+        { new: true },
+        (err, UpdatedUser) => {
+            if (err) {
+                console.error(err);
+                res.status(500).send('Error: ' + err);
+            } else {
+                res.json(UpdatedUser);
+            }
+        });
+});
+
 //READ GETS ALL MOVIES
 app.get('/movies', passport.authenticate('jwt', { session: false }), (req, res) => {
     Movies.find()
@@ -180,11 +196,12 @@ app.get('/director/:Name', passport.authenticate('jwt', { session: false }), (re
 
 //UPDATE PUT USER INFORMATION
 app.put('/users/:Username', passport.authenticate('jwt', { session: false }), (req, res) => {
+    let hashedPassword = Users.hashPassword(req.body.Password);
     Users.findOneAndUpdate({ Username: req.params.Username }, {
         $set:
         {
             Username: req.body.Username,
-            Password: req.body.Password,
+            Password: hashedPassword,
             Email: req.body.Email,
             Birthday: req.body.Birthday
         }
