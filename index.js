@@ -106,19 +106,15 @@ app.get('/', (req, res) => {
     res.send('This is MovieScout');
 });
 
-//Get favorite movies from user
-app.get('/users/:Username/movies/:MovieID', passport.authenticate('jwt', { session: false }), (req, res) => {
-    Users.find({ Username: req.params.Username }, {
-        $get: { FavoriteMovies: req.params.MovieID }
-    },
-        { new: true },
-        (err, UpdatedUser) => {
-            if (err) {
-                console.error(err);
-                res.status(500).send('Error: ' + err);
-            } else {
-                res.json(UpdatedUser);
-            }
+//Get movie by ID
+app.get('/movies/:MovieID', passport.authenticate('jwt', { session: false }), (req, res) => {
+    Movies.findOne({ _id: req.params._id })
+        .then((Title) => {
+            res.json(Title);
+        })
+        .catch((err) => {
+            console.error(err);
+            res.status(500).send('Error: ' + err);
         });
 });
 
