@@ -108,7 +108,7 @@ app.get('/', (req, res) => {
 
 //Get movie by ID
 app.get('/movies/:MovieID', passport.authenticate('jwt', { session: false }), (req, res) => {
-    Movies.findOne({ _id: req.params._id })
+    Movies.findOne({ _id: req.params.MovieID })
         .then((movies) => {
             res.json(movies);
         })
