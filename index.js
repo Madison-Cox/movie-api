@@ -109,8 +109,8 @@ app.get('/', (req, res) => {
 //Get movie by ID
 app.get('/movies/:MovieID', passport.authenticate('jwt', { session: false }), (req, res) => {
     Movies.findOne({ _id: req.params._id })
-        .then((Title) => {
-            res.json(Title);
+        .then((movies) => {
+            res.json(movies._id);
         })
         .catch((err) => {
             console.error(err);
@@ -157,8 +157,8 @@ app.get('/users/:Username', passport.authenticate('jwt', { session: false }), (r
 //READ FIND MOVIE BY TITLE
 app.get('/movies/:Title', passport.authenticate('jwt', { session: false }), (req, res) => {
     Movies.findOne({ Title: req.params.Title })
-        .then((Title) => {
-            res.json(Title);
+        .then((movies) => {
+            res.json(movies.Title);
         })
         .catch((err) => {
             console.error(err);
