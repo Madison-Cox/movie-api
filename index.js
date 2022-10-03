@@ -157,8 +157,8 @@ app.get('/users/:Username', passport.authenticate('jwt', { session: false }), (r
 //READ FIND MOVIE BY TITLE
 app.get('/movies/:Title', passport.authenticate('jwt', { session: false }), (req, res) => {
     Movies.findOne({ Title: req.params.Title })
-        .then((movie) => {
-            res.json(movie);
+        .then((Title) => {
+            res.json(Title);
         })
         .catch((err) => {
             console.error(err);
