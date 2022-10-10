@@ -203,7 +203,7 @@ app.get('/director/:Name', passport.authenticate('jwt', { session: false }), (re
 });
 
 //READ FIND MOVIES BY DIRECTOR
-app.get('/director/:Name', passport.authenticate('jwt', { session: false }), (req, res) => {
+app.get('/director/:Name/:movies', passport.authenticate('jwt', { session: false }), (req, res) => {
     Movies.find({ 'Director.Name': req.params.Name })
         .then((movies) => {
             res.json(movies.Director);
