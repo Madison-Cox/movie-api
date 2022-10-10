@@ -178,9 +178,33 @@ app.get('/genre/:Name', passport.authenticate('jwt', { session: false }), (req, 
         });
 });
 
+//READ MOVIES BY GENRE
+app.get('/genre/:Name/:movies', passport.authenticate('jwt', { session: false }), (req, res) => {
+    Movies.find({ 'Genre.Name': req.params.Name })
+        .then((movies) => {
+            res.json(movies.Genre);
+        })
+        .catch((err) => {
+            console.error(err);
+            res.status(500).send('Error: ' + err);
+        });
+});
+
 //READ FIND DIRECTOR
 app.get('/director/:Name', passport.authenticate('jwt', { session: false }), (req, res) => {
     Movies.findOne({ 'Director.Name': req.params.Name })
+        .then((movies) => {
+            res.json(movies.Director);
+        })
+        .catch((err) => {
+            console.error(err);
+            res.status(500).send('Error: ' + err);
+        });
+});
+
+//READ FIND MOVIES BY DIRECTOR
+app.get('/director/:Name', passport.authenticate('jwt', { session: false }), (req, res) => {
+    Movies.find({ 'Director.Name': req.params.Name })
         .then((movies) => {
             res.json(movies.Director);
         })
