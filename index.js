@@ -179,10 +179,10 @@ app.get('/genre/:Name', passport.authenticate('jwt', { session: false }), (req, 
 });
 
 //READ MOVIES BY GENRE
-app.get('/:Genre/movies', passport.authenticate('jwt', { session: false }), (req, res) => {
+app.get('/:Genre', passport.authenticate('jwt', { session: false }), (req, res) => {
     Movies.find({ 'Genre.Name': req.params.Name })
-        .then((movies) => {
-            res.json(movies);
+        .then((titles) => {
+            res.json(titles);
         })
         .catch((err) => {
             console.error(err);
