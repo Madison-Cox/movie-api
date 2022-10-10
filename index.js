@@ -182,7 +182,7 @@ app.get('/genre/:Name', passport.authenticate('jwt', { session: false }), (req, 
 app.get('/:Genre/movies', passport.authenticate('jwt', { session: false }), (req, res) => {
     Movies.find({ 'Genre.Name': req.params.Name })
         .then((movies) => {
-            res.json(movies.Genre);
+            res.json(movies);
         })
         .catch((err) => {
             console.error(err);
@@ -206,7 +206,7 @@ app.get('/director/:Name', passport.authenticate('jwt', { session: false }), (re
 app.get('/:Director/movies', passport.authenticate('jwt', { session: false }), (req, res) => {
     Movies.find({ 'Director.Name': req.params.Name })
         .then((movies) => {
-            res.json(movies.Director);
+            res.json(movies);
         })
         .catch((err) => {
             console.error(err);
