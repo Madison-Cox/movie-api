@@ -179,7 +179,7 @@ app.get('/genre/:Name', passport.authenticate('jwt', { session: false }), (req, 
 });
 
 //READ MOVIES BY GENRE
-app.get('/movies/:Genre/', passport.authenticate('jwt', { session: false }), (req, res) => {
+app.get('/:Genre/movies', passport.authenticate('jwt', { session: false }), (req, res) => {
     Movies.find({ 'Genre.Name': req.params.Name })
         .then((movies) => {
             res.json(movies.Genre);
@@ -203,7 +203,7 @@ app.get('/director/:Name', passport.authenticate('jwt', { session: false }), (re
 });
 
 //READ FIND MOVIES BY DIRECTOR
-app.get('/movies/:Director', passport.authenticate('jwt', { session: false }), (req, res) => {
+app.get('/:Director/movies', passport.authenticate('jwt', { session: false }), (req, res) => {
     Movies.find({ 'Director.Name': req.params.Name })
         .then((movies) => {
             res.json(movies.Director);
