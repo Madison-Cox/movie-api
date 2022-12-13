@@ -15,8 +15,10 @@ const bcrypt = require('bcrypt');
 
 const { check, validationResult } = require('express-validator');
 
-
 const cors = require('cors');
+app.use(express.static('public'));
+app.use(cors());
+/* const cors = require('cors');
 
 let allowedOrigins = ['http://localhost:1234', 'http://localhost:4200', 'localhost:4200', 'localhost:1234', 'https://movie-scout.herokuapp.com']
 
@@ -30,7 +32,7 @@ app.use(cors({
         return callback(null, true);
     }
 }));
-
+*/
 //mongoose.connect('mongodb://localhost:27017/MovieScout', { useNewUrlParser: true, useUnifiedTopology: true });
 mongoose.connect(process.env.CONNECTION_URI, { useNewUrlParser: true, useUnifiedTopology: true });
 app.use(bodyParser.json());
