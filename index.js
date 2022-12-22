@@ -17,7 +17,7 @@ const { check, validationResult } = require('express-validator');
 
 const cors = require('cors');
 
-const allowedOrigins = ['https://madison-cox.github.io/myFlix-Angular-client', 'http://localhost:1234', '*', 'http://localhost:4200', 'localhost:4200', 'localhost:1234', 'https://movie-scout.herokuapp.com']
+const allowedOrigins = ['https://madison-cox.github.io', 'http://localhost:1234', '*', 'http://localhost:4200', 'localhost:4200', 'localhost:1234', 'https://movie-scout.herokuapp.com']
 
 const options = cors.CorsOptions = {
     origin: allowedOrigins
